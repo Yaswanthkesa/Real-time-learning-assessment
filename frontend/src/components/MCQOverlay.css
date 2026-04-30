@@ -1,0 +1,156 @@
+.mcq-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.mcq-content {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mcq-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #1976d2;
+}
+
+.mcq-header h3 {
+  margin: 0;
+  color: #1976d2;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.mcq-question {
+  margin-bottom: 25px;
+}
+
+.mcq-question p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  font-weight: 500;
+}
+
+.mcq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.mcq-option {
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+.mcq-option:hover {
+  border-color: #1976d2;
+  background-color: #f5f5f5;
+}
+
+.mcq-option.selected {
+  border-color: #1976d2;
+  background-color: #e3f2fd;
+}
+
+.mcq-option.correct-answer {
+  border-color: #4caf50;
+  background-color: #e8f5e9;
+}
+
+.mcq-option.wrong-answer {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+.option-text {
+  font-size: 16px;
+  color: #333;
+  display: block;
+}
+
+.mcq-feedback {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.mcq-feedback.correct {
+  background-color: #e8f5e9;
+  border: 2px solid #4caf50;
+  color: #2e7d32;
+}
+
+.mcq-feedback.incorrect {
+  background-color: #ffebee;
+  border: 2px solid #f44336;
+  color: #c62828;
+}
+
+.mcq-feedback p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.mcq-submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mcq-submit-btn:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.mcq-submit-btn:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .mcq-content {
+    padding: 20px;
+  }
+
+  .mcq-header h3 {
+    font-size: 20px;
+  }
+
+  .mcq-question p {
+    font-size: 16px;
+  }
+
+  .option-text {
+    font-size: 14px;
+  }
+}

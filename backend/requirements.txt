@@ -1,0 +1,7 @@
+# Python dependencies for ML video processing
+torch>=2.0.0
+openai-whisper
+transformers>=4.30.0
+accelerate
+sentencepiece
+protobuf

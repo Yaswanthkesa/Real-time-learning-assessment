@@ -1,0 +1,266 @@
+.video-uploader {
+  margin: 2rem 0;
+}
+
+.upload-dropzone {
+  border: 2px dashed #ddd;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #fafafa;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.upload-dropzone.dragging {
+  border-color: #4CAF50;
+  background-color: #f1f8f4;
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  font-size: 4rem;
+  opacity: 0.6;
+}
+
+.upload-dropzone h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.upload-dropzone p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.file-info {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.btn-browse {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-browse:hover {
+  background-color: #45a049;
+}
+
+.upload-list {
+  margin-top: 2rem;
+}
+
+.upload-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.upload-list-header h4 {
+  margin: 0;
+  color: #333;
+}
+
+.btn-upload-all {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-upload-all:hover {
+  background-color: #1976D2;
+}
+
+.upload-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.3s;
+}
+
+.upload-item.uploading {
+  border-color: #2196F3;
+}
+
+.upload-item.success {
+  border-color: #4CAF50;
+  background-color: #f1f8f4;
+}
+
+.upload-item.error {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+.upload-item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.file-icon {
+  font-size: 2rem;
+}
+
+.file-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.file-size {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.upload-item-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-upload-single {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-upload-single:hover {
+  background-color: #45a049;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 200px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #2196F3;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2196F3;
+  min-width: 40px;
+}
+
+.status-success,
+.status-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.status-success {
+  color: #4CAF50;
+}
+
+.status-error {
+  color: #f44336;
+  font-size: 0.85rem;
+}
+
+.status-icon {
+  font-size: 1.25rem;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s;
+}
+
+.btn-remove:hover {
+  color: #f44336;
+}
+
+@media (max-width: 768px) {
+  .upload-dropzone {
+    padding: 2rem 1rem;
+  }
+
+  .upload-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .upload-item-status {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .progress-container {
+    flex: 1;
+  }
+
+  .upload-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .btn-upload-all {
+    width: 100%;
+  }
+}

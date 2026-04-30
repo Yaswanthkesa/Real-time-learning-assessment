@@ -1,0 +1,35 @@
+[
+    {
+        "title": "Classification Problem",
+        "question": "Which type of problem is logistic regression used to solve?",
+        "options": [
+            "A. Linear problems",
+            "B. Continuous prediction problems",
+            "C. Categorical prediction problems",
+            "D. Time series problems"
+        ],
+        "answer": "C"
+    },
+    {
+        "title": "Binary Classification",
+        "question": "What is the prediction value in a binary classification problem?",
+        "options": [
+            "A. Continuous",
+            "B. Discrete",
+            "C. Categorical with more than two categories",
+            "D. Linear"
+        ],
+        "answer": "B"
+    },
+    {
+        "title": "Logistic Regression vs Linear Regression",
+        "question": "What is the main difference between logistic regression and linear regression?",
+        "options": [
+            "A. Linear regression is used for categorical prediction problems",
+            "B. Logistic regression is used for continuous prediction problems",
+            "C. Logistic regression uses a linear equation line but outputs a probability",
+            "D. Linear regression uses a logistic function to output a probability"
+        ],
+        "answer": "C"
+    }
+]
