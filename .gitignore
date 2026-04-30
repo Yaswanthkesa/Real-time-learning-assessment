@@ -74,6 +74,22 @@ MachineLearning/*.bin
 New folder/
 "New folder/"
 
+# Development and documentation files (not needed in repo)
+.kiro/
+MachineLearning/
+METHODOLOGY_SECTION.md
+IMAGE_GENERATION_PROMPTS.md
+DEPLOYMENT_READY.md
+DEPLOYMENT_STEPS.md
+QUICK_DEPLOY.md
+VERCEL_DEPLOYMENT_GUIDE.md
+answers.txt
+notebook_summary.txt
+parse_notebook.py
+deploy-setup.bat
+deploy-setup.sh
+START_SERVERS.bat
+
 # Testing
 coverage/
 .nyc_output/
