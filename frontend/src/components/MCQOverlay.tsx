@@ -58,7 +58,7 @@ const MCQOverlay: React.FC<MCQOverlayProps> = ({ mcq, videoId, onSubmit }) => {
         }
       );
 
-      const { correct, correctAnswer, shouldReplayFromTimestamp, attempts } = response.data;
+      const { correct, correctAnswer, shouldReplayFromTimestamp } = response.data;
 
       if (correct) {
         setFeedback({

@@ -24,6 +24,7 @@ const MyProgressPage: React.FC = () => {
 
   useEffect(() => {
     fetchEnrolledCourses();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
