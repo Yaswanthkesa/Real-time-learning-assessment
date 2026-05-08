@@ -52,8 +52,8 @@ const callPythonMLProcessor = async (
     let modeLabel: string;
     
     if (useGroqAPI) {
-      pythonScript = path.join(__dirname, '../../ml_processor_groq.py');
-      modeLabel = '🌐 Using GROQ API mode (Whisper + Groq Llama 3.3 70B)';
+      pythonScript = path.join(__dirname, '../../ml_processor_groq_cloud.py');
+      modeLabel = '☁️ Using GROQ CLOUD mode (Groq Whisper API + Groq Llama 3.3 70B)';
     } else if (useFastMode) {
       pythonScript = path.join(__dirname, '../../ml_processor_fast.py');
       modeLabel = '⚡ Using FAST mode (Whisper tiny + Flan-T5)';
