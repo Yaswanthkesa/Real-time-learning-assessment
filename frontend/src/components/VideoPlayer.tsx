@@ -135,35 +135,40 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, courseId }) => {
 
   // Handle MCQ answer submission
   const handleMCQSubmit = async (answer: string, isCorrect: boolean, replayTimestamp?: number) => {
-    if (isCorrect && currentMCQ) {
-      // Mark MCQ as answered
+    if (!currentMCQ) return;
+
+    if (isCorrect) {
+      // Mark MCQ as answered (correct)
       setAnsweredMCQs((prev) => new Set(prev).add(currentMCQ._id));
       
       // Save this MCQ's timestamp as the last correct one
       setLastCorrectMCQTimestamp(currentMCQ.timestamp);
       console.log(`✅ Correct! Saved checkpoint at ${currentMCQ.timestamp}s`);
       
-      // Close overlay and resume video
+      // Close overlay and resume video from current position
       setShowMCQ(false);
       setCurrentMCQ(null);
       
-      // Use setTimeout to avoid play/pause conflict
+      // Resume video from current position
       setTimeout(() => {
         if (videoRef.current) {
           setPlaying(true);
           videoRef.current.play().catch(err => console.log('Play error:', err));
         }
       }, 100);
-    } else if (replayTimestamp !== undefined && currentMCQ) {
-      // Incorrect answer: replay from last correctly answered MCQ timestamp
-      const replayFrom = lastCorrectMCQTimestamp;
-      console.log(`❌ Wrong answer - replaying from ${replayFrom}s (last correct MCQ)`);
+    } else {
+      // Incorrect answer: mark as answered so it won't be asked again
+      setAnsweredMCQs((prev) => new Set(prev).add(currentMCQ._id));
       
-      // Don't mark this MCQ as answered - student needs to answer it again
+      // Replay from last correctly answered MCQ timestamp (or start if first question)
+      const replayFrom = lastCorrectMCQTimestamp; // Will be 0 if first question
+      console.log(`❌ Wrong answer - replaying from ${replayFrom}s (${replayFrom === 0 ? 'video start' : 'last correct MCQ'})`);
+      
+      // Close overlay
       setShowMCQ(false);
       setCurrentMCQ(null);
       
-      // Use setTimeout to avoid play/pause conflict
+      // Replay video from checkpoint
       setTimeout(() => {
         if (videoRef.current) {
           videoRef.current.currentTime = replayFrom;
