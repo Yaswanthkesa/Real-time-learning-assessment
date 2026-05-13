@@ -7,10 +7,7 @@
     "dev": "nodemon src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "jest",
-    "clear:db": "node clear-database.js",
-    "clear:uploads": "node clear-uploads.js",
-    "clear:all": "node clear-all.js"
+    "test": "jest"
   },
   "keywords": [
     "education",
